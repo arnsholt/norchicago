@@ -1,0 +1,4 @@
+This is a translation of Glenn Paulley's chicago.bst into Norwegian. To
+install it, place it somewhere under bibtex/bst in your texmf hierarchy and
+run texhash. Then to use the style, put \bibliographystyle{norchicago} in your
+document along with \usepackage{chicago}.
