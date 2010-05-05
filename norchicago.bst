@@ -511,8 +511,8 @@ FUNCTION {format.editors.fml}
     { "" }
     { editor format.names.fml
       editor num.names$ #1 >
-    { " (Eds.)" * }
-    { " (Ed.)" * }
+    { " (Redd.)" * }
+    { " (Red.)" * }
       if$
     }
   if$
@@ -526,8 +526,8 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-    { " (Eds.)" * }
-    { " (Ed.)" * }
+    { " (Redd.)" * }
+    { " (Red.)" * }
       if$
     }
   if$
