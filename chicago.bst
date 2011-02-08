@@ -1,5 +1,3 @@
-% norchicago.bst - A Norwegian Chicago citation style for BibTeX. Adapted from
-% Glenn Paulley's chicago.bst by Arne Skjærholt. 2010/05/05
 %%% ====================================================================
 %%%  @BibTeX-style-file{
 %%%     author          = "Glenn Paulley",
@@ -406,7 +404,7 @@ FUNCTION {format.names}
                 if$
                 t "others" =
                     { " et~al." * }
-                    { " og " * t * } % from Chicago Manual of Style
+                    { " and " * t * } % from Chicago Manual of Style
                   if$
                }
                if$
@@ -436,7 +434,7 @@ FUNCTION {my.full.label}
                 if$
                 t "others" =
                     { " et~al." * }
-                    { " og " * t * } % from Chicago Manual of Style
+                    { " and " * t * } % from Chicago Manual of Style
                   if$
                }
                if$
@@ -472,7 +470,7 @@ FUNCTION {format.names.fml}
                   if$
                   t "others" =
                         { " et~al." * }
-                        { " og " * t * }
+                        { " and " * t * }
 %                       { " \& " * t * }
                       if$
                 }
@@ -511,8 +509,8 @@ FUNCTION {format.editors.fml}
     { "" }
     { editor format.names.fml
       editor num.names$ #1 >
-    { " (Redd.)" * }
-    { " (Red.)" * }
+    { " (Eds.)" * }
+    { " (Ed.)" * }
       if$
     }
   if$
@@ -526,8 +524,8 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-    { " (Redd.)" * }
-    { " (Red.)" * }
+    { " (Eds.)" * }
+    { " (Ed.)" * }
       if$
     }
   if$
@@ -583,8 +581,8 @@ FUNCTION {format.btitle}
   { title empty$
     { title emphasize }
     { volume empty$     % gnp - check for volume, then don't need period
-       { "\textit{ " title * "\/} (" * edition * " utg.)" * "." * }
-       { "\textit{ " title * "\/} (" * edition * " utg.)" * }
+       { "\textit{ " title * "\/} (" * edition * " ed.)" * "." * }
+       { "\textit{ " title * "\/} (" * edition * " ed.)" * }
       if$
     }
     if$
@@ -598,8 +596,8 @@ FUNCTION {format.emphasize.booktitle}
   { booktitle empty$
     { booktitle emphasize }
     { volume empty$    % gnp - extra period an error if book has a volume
-        { "\textit{ " booktitle * "\/} (" * edition * " utg.)" * "." *}
-        { "\textit{ " booktitle * "\/} (" * edition * " utg.)" * }
+        { "\textit{ " booktitle * "\/} (" * edition * " ed.)" * "." *}
+        { "\textit{ " booktitle * "\/} (" * edition * " ed.)" * }
       if$
       }
     if$
@@ -747,8 +745,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
   { "" }
   { editor empty$
-    { "I " format.emphasize.booktitle * }
-    { "I " format.editors.fml * ", " * format.emphasize.booktitle * }
+    { "In " format.emphasize.booktitle * }
+    { "In " format.editors.fml * ", " * format.emphasize.booktitle * }
     if$
   }
   if$
@@ -788,7 +786,7 @@ FUNCTION {format.crossref.editor}
     'skip$
     { editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
         { " et~al." * }
-        { " og " * editor #2 "{vv~}{ll}" format.name$ * }
+        { " and " * editor #2 "{vv~}{ll}" format.name$ * }
       if$
     }
       if$
@@ -799,7 +797,7 @@ FUNCTION {format.crossref.editor}
 FUNCTION {format.book.crossref}
 { volume empty$
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
-      "I "
+      "In "
     }
     { "Volume" volume tie.or.space.connect % gnp - changed to mixed case
       " of " *
@@ -856,7 +854,7 @@ FUNCTION {format.lab.names}
 	{ nameptr numnames =
 	    { s nameptr "{ff }{vv }{ll}{ jj}" format.name$ "others" =
 		{ " et~al." * }
-		{ " og " * s nameptr "{vv~}{ll}" format.name$ * }
+		{ " and " * s nameptr "{vv~}{ll}" format.name$ * }
 	      if$
 	    }
 	    { ", " * s nameptr "{vv~}{ll}" format.name$ * }
@@ -1220,7 +1218,7 @@ FUNCTION {mastersthesis}
   format.title
   "title" output.check
   new.block
-  "Hovedoppgave" format.thesis.type output.nonnull
+  "Master's thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
   new.block
@@ -1252,7 +1250,7 @@ FUNCTION {phdthesis}
   format.btitle
   "title" output.check
   new.block
-  "Doktoravhandling" format.thesis.type output.nonnull
+  "Ph.\ D. thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
   new.block
@@ -1319,29 +1317,29 @@ FUNCTION {unpublished}
 
 FUNCTION {default.type} { misc }
 
-MACRO {jan} {"januar"}
+MACRO {jan} {"January"}
 
-MACRO {feb} {"february"}
+MACRO {feb} {"February"}
 
-MACRO {mar} {"mars"}
+MACRO {mar} {"March"}
 
-MACRO {apr} {"april"}
+MACRO {apr} {"April"}
 
-MACRO {may} {"mai"}
+MACRO {may} {"May"}
 
-MACRO {jun} {"juni"}
+MACRO {jun} {"June"}
 
-MACRO {jul} {"juli"}
+MACRO {jul} {"July"}
 
-MACRO {aug} {"august"}
+MACRO {aug} {"August"}
 
-MACRO {sep} {"september"}
+MACRO {sep} {"September"}
 
-MACRO {oct} {"oktober"}
+MACRO {oct} {"October"}
 
-MACRO {nov} {"november"}
+MACRO {nov} {"November"}
 
-MACRO {dec} {"desember"}
+MACRO {dec} {"December"}
 
 MACRO {acmcs} {"ACM Computing Surveys"}
 
